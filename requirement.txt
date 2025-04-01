@@ -1,0 +1,4 @@
+transformers==4.11.3
+flask==2.0.1
+torch==1.10.0
+locust==2.5.0
