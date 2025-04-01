@@ -1,0 +1,47 @@
+{
+    "os": "Windows-10-10.0.22621-SP0",
+    "python": "3.11.8",
+    "heartbeatAt": "2024-05-21T14:37:20.421636",
+    "startedAt": "2024-05-21T14:37:18.683532",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "OneDrive/Documents/CW-NLP/6844356_Naima_Rashid_COMM061_CodeFile/EXPERIMENT-4.ipynb",
+    "codePathLocal": null,
+    "root": "C:\\Users\\naima",
+    "host": "NR",
+    "username": "naima",
+    "executable": "C:\\Users\\naima\\anaconda3\\python.exe",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 2516.0,
+        "min": 0.0,
+        "max": 3801.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2516.0,
+            "min": 0.0,
+            "max": 3801.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 474.71581649780273,
+            "used": 329.0078659057617
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "memory_total": 8585740288
+        }
+    ],
+    "memory": {
+        "total": 15.189807891845703
+    }
+}

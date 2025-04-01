@@ -1,0 +1,29 @@
+
+Evaluation Results: {'eval_loss': 0.5952693819999695, 'eval_precision': 0.9376523678614036, 'eval_recall': 0.9315640298892038, 'eval_f1': 0.9345982835280737, 'eval_accuracy': 0.9293905790920292, 'eval_runtime': 25.0153, 'eval_samples_per_second': 14.631, 'eval_steps_per_second': 1.479, 'epoch': 3.0}
+Classification Report:
+              precision    recall  f1-score   support
+          AC       0.86      0.78      0.82       559
+          LF       0.71      0.82      0.76       290
+           O       0.97      0.96      0.96      5274
+   micro avg       0.94      0.94      0.94      6123
+   macro avg       0.85      0.85      0.85      6123
+weighted avg       0.94      0.94      0.94      6123
+False Positive
+  B-O: 176
+  B-AC: 68
+  I-LF: 88
+  B-LF: 76
+False Negative
+  B-O: 202
+  B-AC: 125
+  I-LF: 37
+  B-LF: 44
+True Positive
+  B-O: 5072
+  B-AC: 434
+  I-LF: 352
+  B-LF: 244
+True Negative
+  B-O: 1060
+  B-AC: 5883
+  I-LF: 6033
