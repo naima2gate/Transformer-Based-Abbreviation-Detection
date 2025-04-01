@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLP Group 32 Deployment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: rgb(81, 150, 211);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #1f69b9;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> COMM0061-Natural Language Processing</h1>
+        <h2> Group 32 Deployment</h2>
+        <div class="form-group">
+            <label for="inputText">Enter Text For Prediction:</label>
+            <input type="text" id="inputText">
+        </div>
+        <button onclick="getPrediction()">Run Model</button>
+        <button onclick="resetForm()">Reset</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        async function getPrediction() {
+            const inputText = document.getElementById('inputText').value;
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ text: inputText })
+            });
+            const data = await response.json();
+            if (data.error) {
+                document.getElementById('result').innerText = 'Error: ' + data.error;
+            } else {
+                const predictions = data.predictions.map(prediction => `${Object.keys(prediction)[0]}: ${Object.values(prediction)[0]}`).join(', ');
+                document.getElementById('result').innerText = 'Predictions: ' + predictions;
+            }
+        }
+
+        function resetForm() {
+            document.getElementById('inputText').value = '';
+            document.getElementById('result').innerText = '';
+        }
+    </script>
+</body>
+</html>
